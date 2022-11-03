@@ -1,6 +1,6 @@
 # Pupsome Landing Page
 
-<img src="./Css/gifs/Screen Recording 2022-11-02 at 10.43.21 PM.gif" alt="business landing page image" title="Pupsome Cookies and Grooming" width="60%" height="60%">
+<img src="./Css/gifs/pupsome grooming.gif" alt="business landing page image" title="Pupsome Cookies and Grooming" width="60%" height="60%">
 
 ## Overview
 
