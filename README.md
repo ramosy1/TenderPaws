@@ -1,6 +1,6 @@
 # Pupsome Landing Page
 
-<img src="./Css/images/pupsomeheross.png" alt="business landing page image" title="Pupsome Cookies and Grooming" width="50%" height="50%">
+<img src="./Css/images/pupsomeheross.png" alt="business landing page image" title="Pupsome Cookies and Grooming" width="60%" height="60%">
 
 ## Overview
 
