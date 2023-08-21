@@ -21,23 +21,6 @@ app.set('view engine', 'ejs');
 app.use('/', petRoutes);
 
 
-// app.get('/', function (req, res) {
-//     res.render('pages/index');
-// });
-
-// app.get('/about', function (req, res) {
-//     res.render('pages/about-us');
-// });
-
-// app.get('/adopt', function (req, res) {
-//     res.render('pages/adopt');
-// });
-
-// app.get('/get-involved', function (req, res) {
-//     res.render('pages/get-involved');
-// });
-
-
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
