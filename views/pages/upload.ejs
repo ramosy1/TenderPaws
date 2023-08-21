@@ -1,0 +1,48 @@
+<body>
+    <div class="container ">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="text-center mb-4 mt-4" style="background-color: white;">Upload a pet</h2>
+          <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="form-group mb-2">
+              <label for="name">Pet's Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group mb-2">
+              <label for="category">Category</label>
+              <input type="text" class="form-control" id="category" name="category" required>
+            </div>
+            <div class="form-group mb-2">
+              <label for="breed">Breed</label>
+              <input type="text" class="form-control" id="breed" name="breed" required>
+            </div>
+            <div class="form-group mb-2">
+              <label for="status">Status</label>
+              <input type="text" class="form-control" id="status" name="status" required>
+            </div>
+            <div class="form-group mb-2">
+              <label for="sex">Sex</label>
+              <input type="text" class="form-control" id="sex" name="sex" required>
+            </div>
+            <div class="form-group mb-2">
+              <label for="weight">Weight(lbs)</label>
+              <input type="number" class="form-control" id="weight" name="weight" required>
+            </div>
+            <div class="form-group mb-2">
+              <label for="age">Age</label>
+              <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <div class="form-group mb-2">
+              <label for="microchip">Microchip</label>
+              <input type="string" class="form-control" id="microchip" name="microchip" required>
+            </div>
+            <div class="form-group mb-2">
+              <label for="image">Image</label>
+              <input type="file" class="form-control-file" id="image" name="image" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+</body>

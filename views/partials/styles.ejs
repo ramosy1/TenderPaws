@@ -1,0 +1,121 @@
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navigation Bar */
+
+.navbar-brand  img  {
+    max-height: 70px;
+}
+
+.navbar-nav a {
+    color: #ffffff;
+}
+
+.navbar-nav a:hover {
+    color: #F7C192;
+    background-color: #1e1e1e;
+}
+
+
+/* Home Page / General */
+
+.main-banner {
+    width: 100%;
+    min-height: 80vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0px 20px 0px 20px; 
+}
+
+h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    background-color: #1e1e1e;
+    margin: 20px;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 3rem;
+    padding: 40px 10px;
+}
+
+.card-body h5 {
+    color: #ffffff;
+    background-color: #da7b4a;
+    padding: 10px;
+    margin-top: -40px;
+}
+
+.card-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    color: #ffffff;
+}
+
+.accordion {
+    background-color: #F7C192;
+    --bs-accordion-active-color: #da7b4a;
+    --bs-accordion-active-bg: #ffffff;
+    --bs-accordion-border-color: #da7b4a;
+    --bs-accordion-btn-focus-box-shadow: transparent;
+}
+
+@media(max-width: 768px) {
+    .main-banner {
+        min-height: 50vh;
+    }
+
+    h1 {
+        font-size: 2.75rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+        padding: 20px;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+        padding: 20px;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 14px;
+    }    
+}
+
+@media(max-width: 575px) {
+    .btn-story {
+        text-align: center;
+    }
+
+    .btn-about-bottom .btn { 
+        font-size: 16px;
+    }
+}
+
+</style>

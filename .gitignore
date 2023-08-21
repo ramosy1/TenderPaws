@@ -1,0 +1,7 @@
+node_modules
+.env
+pupsomeLandingPage
+
+/package-lock.json
+
+README1.md
