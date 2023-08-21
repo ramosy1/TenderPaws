@@ -1,5 +1,5 @@
-const Category = require('../models/categoriesModel');
-const Pet = require('../models/petModel');
+const Category = require('../models/categoriesModel.js');
+const Pet = require('../models/petModel.js');
 const multer = require('multer');
 
 // multer config for image upload
