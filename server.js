@@ -3,7 +3,7 @@ const express = require('express');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
 const database = require('./config/database');
-const petRoutes = require('./server/routes/petRoutes');
+const petRoutes = require('./routes/petRoutes');
 const expressLayouts = require('express-ejs-layouts');
 
 const app = express();
