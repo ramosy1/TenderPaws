@@ -1,3 +1,5 @@
 node_modules
 .env
 pupsomeLandingPage
+
+/package-lock.json
