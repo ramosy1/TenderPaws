@@ -34,7 +34,7 @@ const getPetCategories = function (req, res) {
 const getAllDogs = async (req, res) => {
     try {
         const limitNumber = 20;
-        const dogs = await Pet.find({ 'category': 'Dogs' }).limit(limitNumber);
+        const dogs = await Pet.find({ 'Category': 'dogs' }).limit(limitNumber);
         res.render('pages/dogs', { pets: dogs });
     } catch (err) {
         console.log(err);
@@ -44,7 +44,7 @@ const getAllDogs = async (req, res) => {
 const getAllCats = async (req, res) => {
     try {
         const limitNumber = 20;
-        const cats = await Pet.find({ 'category': 'Cats' }).limit(limitNumber);
+        const cats = await Pet.find({ 'Category': 'cats' }).limit(limitNumber);
         res.render('pages/cats', { pets: cats });
     } catch (err) {
         console.log(err);
@@ -54,7 +54,7 @@ const getAllCats = async (req, res) => {
 const getAllOthers = async (req, res) => {
     try {
         const limitNumber = 20;
-        const others = await Pet.find({ 'category': 'Others' }).limit(limitNumber);
+        const others = await Pet.find({ 'Category': 'others' }).limit(limitNumber);
         res.render('pages/others', { pets: others });
     } catch (err) {
         console.log(err);
