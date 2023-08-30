@@ -1,4 +1,3 @@
-delete require.cache[require.resolve('../models/categoryModel.js')];
 const Category = require('../models/categoryModel.js');
 const Pet = require('../models/petModel.js');
 const multer = require('multer');
