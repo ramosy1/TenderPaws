@@ -7,7 +7,7 @@ const petSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ['dogs', 'cats', 'others'],
+        enum: ['Dogs', 'Cats', 'Others'],
         required: 'This is a required field.'
     },
     breed: {
