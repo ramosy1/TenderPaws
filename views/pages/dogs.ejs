@@ -1,10 +1,16 @@
 <body>
-
-  <h2 class="text-center mb-4 mt-4" style="background-color: white;">Dogs</h2>
+    <!-- Adopt section -->
+    <main>
+        <section class="main-banner" style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('/public/images/dogs-1.jpg')">
+            <h1> Adopt A Doggie</h1>
+            <h2 class="mx-5">Forever Your BFF</h2>
+        </section>
+    </main>
 
     <!-- Dogs category section -->
     <section>
-      <div class="container mt-4">
+        <h3 class="text-center bg-dark text-white">Dogs</h3>
+        <div class="container mt-5 mb-5">
           <div class="row">
               <% pets.forEach(pet => { %>
               <% if (pet.category === 'Dogs') { %>
@@ -35,5 +41,8 @@
               <% }); %>
           </div>
       </div>
+        <div class="btn-about-bottom text-center mb-5">
+            <a href="/adopt"><button class="btn btn-lg rounded-0" style="background-color: #da7b4a; color: #ffffff; width: 28%;">Adopt A Pet</button></a>
+        </div>
     </section>
 </body>

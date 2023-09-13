@@ -1,9 +1,8 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
         <div class="container">
-            <a class="navbar-brand" href="/"><img src="/public/images/TPA-logo.png"
-                alt="TenderPaws Pet Adoptions logo image" ></a>
-                <!-- <a class="navbar-brand" href="/">TenderPaws Pet Adoptions</a> -->
+            <a class="navbar-brand" href="/"><img src="/public/images/TPA-logo.png" alt="TenderPaws Pet Adoptions logo image"></a>
+                
             <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -21,6 +20,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/">Home</a>
                         </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="/about-us">About Us</a>
                         </li>
@@ -36,18 +36,25 @@
                                 <li><a class="dropdown-item" href="/get-involved#shop">Support Our Shop</a></li>
                             </ul>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#">Login</a>
+                        <% if (user) { %>
+                            <span class="navbar-text text-light ml-3"><%= user.username %></span>
+                        <% } %>
+                        
+                        <% if (!user) { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-3 py-1 rounded-4 " href="#" style="background-color: #F7C192">Sign up</a>
+                            <a class="nav-link px-3 py-1 rounded-4 " href="/signup" style="background-color: #F7C192">Signup</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-3 py-1 rounded-4 " href="#" style="background-color: #F7C192">Logout</a>
-                        </li> -->
+                        <% } else { %>
                         <li class="nav-item">
                             <a class="nav-link" href="/upload">Upload</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-1 rounded-4 " href="/logout" style="background-color: #F7C192">Logout</a>
+                        </li>
+                        <% } %>
                     </ul>
                 </div>
             </div>

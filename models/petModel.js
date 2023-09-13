@@ -32,11 +32,16 @@ const petSchema = new mongoose.Schema({
     },
     microchip: {
         type: String,
-        required: 'This is a required field.'
+        required: 'This is a required field.',
+        unique: true
     },
     image: {
         type: String,
         required: 'This is a required field.'
+    },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     }
 });
 
