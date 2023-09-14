@@ -2,7 +2,8 @@
 
     <!-- Adopt all pets section -->
     <main>
-        <section class="main-banner" style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('/public/images/pets-1.jpg')">
+        <section class="main-banner"
+            style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('/public/images/pets-1.jpg')">
             <h1>Adopt A Pet</h1>
             <h2 class="mx-5">Eager to Love You</h2>
         </section>
@@ -13,43 +14,56 @@
         <h3 class="text-center bg-dark text-white">All Pets</h3>
         <div class="container mt-5 mb-5">
             <div class="row">
-                <% if (pets != '') { %>
-                <% pets.forEach(pet => { %>
-                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                    <div class="card h-100 rounded-0">
-                        <img class="card-img-top rounded-0" src="/uploads/<%= pet.image %>" alt="Card image of pet"width="100%" height="200px" style="object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title text-center w-100%"><%= pet.name %></h5>
-                            <p class="card-text">Category: <%= pet.category %></p> 
-                            <p>Breed: <%= pet.breed %></p> 
-                            <p>Status: <%= pet.status %> </p>
-                            <p>Sex: <%= pet.sex %> </p>
-                            <p>Weight (lbs): <%= pet.weight %> </p>
-                            <p>Age: <%= pet.age %></p>
-                            <p>Microchip: <%= pet.microchip %></p>
-                            <p>Posted by: <%= pet.owner.username %></p>
+                <% if (pets != '' ) { %>
+                    <% pets.forEach(pet => { %>
+                        <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                            <div class="card h-100 rounded-0">
+                                <img class="card-img-top rounded-0" src="/uploads/<%= pet.image %>"
+                                    alt="Card image of pet" width="100%" height="200px" style="object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center w-100%">
+                                        <%= pet.name %>
+                                    </h5>
+                                    <p class="card-text">Category: <%= pet.category %>
+                                    </p>
+                                    <p>Breed: <%= pet.breed %>
+                                    </p>
+                                    <p>Status: <%= pet.status %>
+                                    </p>
+                                    <p>Sex: <%= pet.sex %>
+                                    </p>
+                                    <p>Weight (lbs): <%= pet.weight %>
+                                    </p>
+                                    <p>Age: <%= pet.age %>
+                                    </p>
+                                    <p>Microchip: <%= pet.microchip %>
+                                    </p>
+                                    <% if (pet.uploader) { %>
+                                        <p>Posted by: <%= pet.uploader.username %></p>
+                                    <% } else { %>
+                                        <p>Posted by: Unknown User</p>
+                                    <% } %>
+                                  </div>
+                                  <% if (currentUser && pet.uploader._id.equals(currentUser._id)) { %>
+                                  <div class="card-footer">
+                                      <a href="/edit/<%= pet._id %>" class="btn btn-primary">Edit</a>
+                                      <form action="/delete/<%= pet._id %>" method="POST" style="display:inline;">
+                                          <button type="submit" class="btn btn-danger">Delete</button>
+                                      </form>
+                                  </div>
+                                  <% } %>
+                                </div>
                         </div>
-                        <% if (currentUser && pet.owner._id.equals(currentUser._id)) { %>
-
-                        
-                        <div class="card-footer">
-                            <a href="/edit/<%= pet._id %>" class="btn btn-primary">Edit</a>
-                            <form action="/delete/<%= pet._id %>" method="POST" style="display:inline;">
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </div>
-                        <% } %>
-                    </div>
-                </div>
-                <% }); %>
+                    <% }); %>
                 <% } else { %>
-                <p>No pets found.</p>
+                    <p>No pets found.</p>
                 <% } %>
             </div>
         </div>
-            <div class="btn-about-bottom text-center mb-5">
-                <a href="/adopt"><button class="btn btn-lg rounded-0" style="background-color: #da7b4a; color: #ffffff; width: 28%;">Adopt A Pet</button></a>
-            </div>
+        <div class="btn-about-bottom text-center mb-5">
+            <a href="/adopt"><button class="btn btn-lg rounded-0"
+                    style="background-color: #da7b4a; color: #ffffff; width: 28%;">Adopt A Pet</button></a>
+        </div>
     </section>
-        
+
 </body>

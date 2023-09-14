@@ -34,7 +34,7 @@ const getPetCategories = function (req, res) {
 const getAllDogs = async (req, res) => {
     try {
         const limitNumber = 20;
-        const dogs = await Pet.find({ 'category': 'Dogs' }).populate('owner').limit(limitNumber);
+        const dogs = await Pet.find({ 'category': 'Dogs' }).limit(limitNumber).populate('uploader');
         res.render('pages/dogs', { pets: dogs, user: req.user });
     } catch (err) {
         console.log(err);
@@ -44,7 +44,7 @@ const getAllDogs = async (req, res) => {
 const getAllCats = async (req, res) => {
     try {
         const limitNumber = 20;
-        const cats = await Pet.find({ 'category': 'Cats' }).populate('owner').limit(limitNumber);
+        const cats = await Pet.find({ 'category': 'Cats' }).limit(limitNumber).populate('uploader');
         res.render('pages/cats', { pets: cats, user: req.user });
     } catch (err) {
         console.log(err);
@@ -54,7 +54,7 @@ const getAllCats = async (req, res) => {
 const getAllOthers = async (req, res) => {
     try {
         const limitNumber = 20;
-        const others = await Pet.find({ 'category': 'Others' }).populate('owner').limit(limitNumber);
+        const others = await Pet.find({ 'category': 'Others' }).limit(limitNumber).populate('uploader');
         res.render('pages/others', { pets: others, user: req.user });
     } catch (err) {
         console.log(err);
@@ -64,7 +64,7 @@ const getAllOthers = async (req, res) => {
 const getAllPets = async (req, res) => {
     try {
         const limitNumber = 20;
-        const pets = await Pet.find().populate('owner').limit(limitNumber);
+        const pets = await Pet.find().limit(limitNumber).populate('uploader');
         res.render('pages/pets', { pets: pets, user: req.user });
     } catch (err) {
         console.log(err);
@@ -87,7 +87,7 @@ const createPet = async (req, res) => {
             age: req.body.age,
             microchip: req.body.microchip,
             image: req.file.filename, // multer places the file info in req.file
-            owner: req.user._id
+            uploader: req.user._id
         });
 
         await pet.save();
@@ -111,7 +111,7 @@ const updatePet = async (req, res) => {
     console.log(req.body)
     try {
         let pet = await Pet.findById(req.params.id);
-            if(pet.owner.equals(req.user._id)){
+            if(pet.uploader.equals(req.user._id)){
                 await Pet.findByIdAndUpdate(req.params.id, req.body);
             }
         res.redirect('/');
@@ -123,7 +123,7 @@ const updatePet = async (req, res) => {
 const deletePet = async (req, res) => {
     try {
         let pet = await Pet.findById(req.params.id);
-            if(pet.owner.equals(req.user._id)){
+            if(pet.uploader.equals(req.user._id)){
                 await Pet.findByIdAndRemove(req.params.id);
             }
         res.redirect('/');

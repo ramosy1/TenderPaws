@@ -11,7 +11,7 @@ const signupPage = (req, res) => {
 }
 
 const loginUser = passport.authenticate('local', {
-    successRedirect: '/',
+    successRedirect: '/adopt',
     failureRedirect: '/login',
     failureFlash: false
 });
@@ -22,7 +22,7 @@ const signupUser = async (req, res) => {
         const user = new User({ username });
         await User.register(user, password);
         passport.authenticate('local')(req, res, function () {
-        res.redirect('/login');
+        res.redirect('/');
     });
     } catch(err){
         console.log(err);

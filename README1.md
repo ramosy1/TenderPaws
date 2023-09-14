@@ -3,11 +3,11 @@
 <p>TenderPaws Pet Adoptions is a project that's evolved from a previous coding bootcamp project; Pupsome Cookies and Grooming(see "Phase 1"  below), a landing page for a fictitious pet grooming business. Now a pet adoption app, it is a user-friendly and versatile pet adoption application designed to connect pet lovers with their ideal furry companions. Users can explore and adopt pets, report lost animals, and provide shelter for found pets, using this responsive and engaging platform.</p>
 
 
-<p><b>Link to project: </b><a href="https://github.com/ramosy1/TenderPaws" target="blank" rel="nofollow">Pupsome Cookies and Grooming</a></p>
+<p><b>Link to project: </b><a href="https://tenderpaws.onrender.com" target="blank" rel="nofollow">TenderPaws Pet Adoptions</a></p>
 
-<p><b>Tech used: </b>EJS, Express.js, Node.js, and MongoDB</p>
+<p><b>Tech used: </b>EJS, Express.js, Node.js, MongoDB and Passport.</p>
 
-<p><b>Link to code: </b><a href="https://github.com/ramosy1/TenderPaws" target="blank" rel="nofollow">Pupsome Cookies and Grooming</a></p>
+<p><b>Link to code: </b><a href="https://github.com/ramosy1/TenderPaws" target="blank" rel="nofollow"></a></p>
 
 
 ## Phase 1 - Pupsome Landing Page ##

@@ -27,21 +27,28 @@
                             <p>Weight (lbs): <%= pet.weight %> </p>
                             <p>Age: <%= pet.age %></p>
                             <p>Microchip: <%= pet.microchip %></p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="/edit/<%= pet._id %>" class="btn btn-primary">Edit</a>
-                            <form action="/delete/<%= pet._id %>" method="POST" style="display:inline;">
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <% } else { %>
-                  <p>No <%= pet.category %> found.</p>
-                <% } %>
-                <% }); %>
-            </div>
-        </div>
+                            <% if (pet.uploader) { %>
+                                <p>Posted by: <%= pet.uploader.username %></p>
+                            <% } else { %>
+                                <p>Posted by: Unknown User</p>
+                            <% } %>
+                          </div>
+                          <% if (currentUser && pet.uploader._id.equals(currentUser._id)) { %>
+                          <div class="card-footer">
+                              <a href="/edit/<%= pet._id %>" class="btn btn-primary">Edit</a>
+                              <form action="/delete/<%= pet._id %>" method="POST" style="display:inline;">
+                                  <button type="submit" class="btn btn-danger">Delete</button>
+                              </form>
+                          </div>
+                          <% } %>
+                      </div>
+                  </div>
+                  <% } else { %>
+                    <p>No <%= pet.category %> found.</p>
+                  <% } %>
+                  <% }); %>
+              </div>
+          </div>
             <div class="btn-about-bottom text-center mb-5">
                 <a href="/adopt"><button class="btn btn-lg rounded-0" style="background-color: #da7b4a; color: #ffffff; width: 28%;">Adopt A Pet</button></a>
             </div>

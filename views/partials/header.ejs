@@ -1,63 +1,64 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
-        <div class="container">
-            <a class="navbar-brand" href="/"><img src="/public/images/TPA-logo.png" alt="TenderPaws Pet Adoptions logo image"></a>
-                
-            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas shadow-none bg-dark text-white offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <a class="offcanvas-title" href="/"><img src="/public/images/TPA-logo.png"
-                            alt="TenderPaws Pet Adoptions logo image" style="height: 35px"></a>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3 shadow-none">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about-us">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/adopt">Adopt</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">Get Involved</a>
-                            <ul class="dropdown-menu" style="background-color: #212529; border-radius: 0%;">
-                                <li><a class="dropdown-item" href="/get-involved#donate">Donate</a></li>
-                                <li><a class="dropdown-item" href="/get-involved#volunteer">Volunteer</a></li>
-                                <li><a class="dropdown-item" href="/get-involved#shop">Support Our Shop</a></li>
-                            </ul>
-                        </li>
-                        <% if (user) { %>
-                            <span class="navbar-text text-light ml-3"><%= user.username %></span>
-                        <% } %>
-                        
-                        <% if (!user) { %>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-3 py-1 rounded-4 " href="/signup" style="background-color: #F7C192">Signup</a>
-                        </li>
-                        <% } else { %>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/upload">Upload</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-3 py-1 rounded-4 " href="/logout" style="background-color: #F7C192">Logout</a>
-                        </li>
-                        <% } %>
-                    </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+            <div class="container">
+                <a class="navbar-brand" href="/"><img src="/public/images/TPA-logo.png" alt="TenderPaws Pet Adoptions logo image"></a>
+                    
+                <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas shadow-none bg-dark text-white offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <a class="offcanvas-title" href="/"><img src="/public/images/TPA-logo.png"
+                                alt="TenderPaws Pet Adoptions logo image" style="height: 35px"></a>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-start align-items-center flex-grow-1 pe-3 shadow-none">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about-us">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/adopt">Adopt</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">Get Involved</a>
+                                <ul class="dropdown-menu" style="background-color: #212529; border-radius: 0%;">
+                                    <li><a class="dropdown-item" href="/get-involved#donate">Donate</a></li>
+                                    <li><a class="dropdown-item" href="/get-involved#volunteer">Volunteer</a></li>
+                                    <li><a class="dropdown-item" href="/get-involved#shop">Support Our Shop</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto align-items-center">
+                            <% if (user) { %>
+                                <li class="nav-item">
+                                    <span class="navbar-text text-light mr-3"><%= user.username %></span>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/upload" style="color: #F7C192">Upload</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link px-3 py-1 rounded-4 ml-3" href="/logout" style="background-color: #F7C192">Logout</a>
+                                </li>
+                            <% } else { %>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/login">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link px-3 py-1 rounded-4 " href="/signup" style="background-color: #F7C192">Signup</a>
+                                </li>
+                            <% } %>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 </header>

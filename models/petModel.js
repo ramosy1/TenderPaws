@@ -39,7 +39,7 @@ const petSchema = new mongoose.Schema({
         type: String,
         required: 'This is a required field.'
     },
-    owner: {
+    uploader: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }

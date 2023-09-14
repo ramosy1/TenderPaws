@@ -1,22 +1,26 @@
-<body>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
 
     <!-- Login form section -->
-    <section>
-        <h1>Login</h1>
+    <section style="flex:1">
         <div class="container">
-            <form action="/login" method="post">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" required>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-center mb-4 mt-4" style="background-color: white;">Login</h2>
+                    <form action="/login" method="POST">
+                        <div class="form-group mb-2">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                        <p>Don't have an account yet? <a href="/signup">Signup</a></p>
+                        <p>or <a href="/index">Return Home</a></p>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <p>Don't have an account yet? <a href="/signup">Signup</a></p>
-                <p>or <a href="/index">Return Home</a></p>
-            </form>
+            </div>
         </div>
     </section>
 </body>
